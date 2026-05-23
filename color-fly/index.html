@@ -5,49 +5,78 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/style.css">
     <title>Color Fly</title>
+
 </head>
 <body>
     
 <header class="site-header">
     <div class="logo-container">
         <img src="img/pngtree-artist-at-work-painter-with-colorful-palette-png-image_18642447.webp" class="logo">
+        <div class="logo-text">
         <h1 class="site-title">Colorfly Studio</h1>
+            <span>Generador de Paletas de Color</span>
+        </div>
     </div>
 </header>
 
 <main class="main-content">
-    <section class="format-section">
+    <section class="format-section--formato">
         <h2>Formato del Color</h2>
         <div class="format-buttons">
             <button class="button-active">HEX</button>
-            <button class="button-active">HSL</button>
+            <button class="button-inactive">HSL</button>
         </div>
     </section>
         <section class="palette">
-            <div class="color-box"></div>
-            <div class="color-box"></div>
-            <div class="color-box"></div>
-            <div class="color-box"></div>
-            <div class="color-box"></div>
-            <div class="color-box"></div>
-        </section> 
-    <section class="format-section">
-        <h2>Cantidad de Colores</h2>
-        <label>
-            <input type="radio" name="quantity" value="6" checked>
-            6   
-            <input type="radio" name="quantity" value="8">
-            8
-            <input type="radio" name="quantity" value="9">
-            9   
-        </label>
+    <div class="color-box" style="background-color: #FF5733;"
+         data-hex="#FF5733" data-hsl="hsl(11, 100%, 60%)">
+        <span class="color-code">#FF5733</span>
+    </div>
+    <div class="color-box" style="background-color: #33FF57;"
+         data-hex="#33FF57" data-hsl="hsl(127, 100%, 60%)">
+        <span class="color-code">#33FF57</span>
+    </div>
+    <div class="color-box" style="background-color: #3357FF;"
+         data-hex="#3357FF" data-hsl="hsl(229, 100%, 60%)">
+        <span class="color-code">#3357FF</span>
+    </div>
+    <div class="color-box" style="background-color: #F3FF33;"
+         data-hex="#F3FF33" data-hsl="hsl(63, 100%, 60%)">
+        <span class="color-code">#F3FF33</span>
+    </div>
+    <div class="color-box" style="background-color: #FF33F3;"
+         data-hex="#FF33F3" data-hsl="hsl(301, 100%, 60%)">
+        <span class="color-code">#FF33F3</span>
+    </div>
+    <div class="color-box" style="background-color: #33FFF3;"
+         data-hex="#33FFF3" data-hsl="hsl(177, 100%, 60%)">
+        <span class="color-code">#33FFF3</span>
+    </div>
+    <div class="color-box" style="background-color: #FF8C33;"
+         data-hex="#FF8C33" data-hsl="hsl(28, 100%, 60%)">
+        <span class="color-code">#FF8C33</span>
+    </div>
+    <div class="color-box" style="background-color: #8C33FF;"
+         data-hex="#8C33FF" data-hsl="hsl(271, 100%, 60%)">
+        <span class="color-code">#8C33FF</span>
+    </div>
+    <div class="color-box" style="background-color: #33FF8C;"
+         data-hex="#33FF8C" data-hsl="hsl(151, 100%, 60%)">
+        <span class="color-code">#33FF8C</span>
+    </div>
+</section>
     </section>
-
-            <div>
-                <button type="button">Generar Paleta</button>
-            </div>
-
+    <section class="format-section--cantidad">
+        <h2>Cantidad de Colores</h2>
+        <label><input type="radio" name="quantity" value="6" checked> 6</label>
+        <label><input type="radio" name="quantity" value="8"> 8</label>
+        <label><input type="radio" name="quantity" value="9"> 9</label>
+    </section>
+        <button type="button" id="generate-btn" class="btn-generate">Generar Paleta</button>
 </main>
 
+<footer class="site-footer">
+    <p>&copy; 2026 Colorfly Studio. Todos los derechos reservados por Gustavo Arteaga.</p>
+</footer>
 </body>
 </html>

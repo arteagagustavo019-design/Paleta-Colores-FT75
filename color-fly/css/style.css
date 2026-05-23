@@ -19,6 +19,11 @@ body {
     gap: 10px;
 }
 
+.logo-text {
+    display: flex;
+    flex-direction: column;
+}
+
 .logo {
     width: 40px;
     height: 40px;
@@ -30,6 +35,14 @@ body {
     font-size: 1.5rem;
     color: white;
 }
+
+.site-subtitle {
+    display: flex;
+    margin: 0;
+    font-size: 1rem;
+    color: white;
+}
+
 h2 {
     margin-top: 2rem;
     font-size: 1.25rem;
@@ -49,16 +62,33 @@ label {
     margin: 0 auto;
 }
 
-.format-section {
+.format-section--formato {
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 1rem;
 }
 
+.format-section--cantidad   {
+    display: flex;          /* Acomoda los elementos en fila */
+    align-items: center;    /* Los alinea verticalmente al centro */
+    justify-content: center; /* Los centra horizontalmente */
+    gap: 1rem;              /* Espacio entre el título y los botones */
+}
+
 .button-active {
     padding: 0.5rem 1rem;
     background-color: gray;
+    color: white;
+    border: 1px solid white;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 1rem;
+}
+
+.button-inactive {
+    padding: 0.5rem 1rem;
+    background-color: transparent;
     color: white;
     border: 1px solid white;
     cursor: pointer;
@@ -73,12 +103,17 @@ label {
 
 .palette {
     display: flex;
+    flex-wrap: wrap; 
+    justify-content: center;
     gap: 1rem;
-
     width: 90%;
     max-width: 1000px;
-
     margin: 2rem auto;
+}
+
+/* ── Efecto al pasar el mouse por la caja ── */
+.color-box:hover {
+    transform: scale(1.05); /* La caja crece un poco al hacer hover */
 }
 
 /* CAJAS DE COLOR */
@@ -87,36 +122,61 @@ label {
     flex: 1;
     height: 220px;
     border-radius: 16px;
-
     display: flex;
     align-items: flex-end;
     justify-content: center;
-
     padding-bottom: 1rem;
+    cursor: pointer;                            /* Indica que la caja es clickeable */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Da profundidad */
+    transition: transform 0.2s ease;           /* Para que el hover sea suave */
 }
 
-/* COLORES */
-
-.color-box:nth-child(1) {
-    background-color: #2563EB;
+/* ── Texto que muestra el código del color ── */
+.color-code {
+    background-color: rgba(0, 0, 0, 0.4); /* Fondo negro semitransparente */
+    color: #ffffff;           /* Texto blanco para que se lea bien */
+    font-size: 12px;          /* Tamaño de letra pequeño */
+    padding: 4px 8px;         /* Espacio alrededor del texto */
+    border-radius: 4px;       /* Bordes ligeramente redondeados */
+    margin-bottom: 8px;       /* Separación del borde inferior */
+    font-family: monospace;   /* Fuente tipo código */
+    letter-spacing: 1px;      /* Separa un poco las letras */
 }
 
-.color-box:nth-child(2) {
-    background-color: #10B981;
+.hidden {
+    display: none; /* Esto es lo que realmente oculta el elemento */
 }
 
-.color-box:nth-child(3) {
-    background-color: #F59E0B;
+
+.btn-generate {
+    background-color: #2563EB;  /* Color de fondo azul */
+    color: #ffffff;             /* Texto blanco */
+    font-size: 1rem;            /* Tamaño de letra */
+    font-weight: 600;           /* Texto semi-negrita */
+    padding: 0.75rem 2rem;      /* Espacio interior (arriba/abajo - izq/der) */
+    border: none;               /* Sin borde */
+    border-radius: 8px;         /* Bordes redondeados */
+    cursor: pointer;            /* Cursor de manito al pasar */
+    transition: background-color 0.2s ease, /* Animación suave en hover */
+                transform 0.2s ease;
+    display: block;       /* hace que el botón ocupe su propia linea */
+    margin: 0 auto;       /* ← lo centra horizontalmente */
 }
 
-.color-box:nth-child(4) {
-    background-color: #EF4444;
+/* ── Efecto hover ── */
+.btn-generate:hover {
+    background-color: #1D4ED8;  /* Azul más oscuro al pasar el mouse */
+    transform: scale(1.05);     /* Crece un poco */
 }
 
-.color-box:nth-child(5) {
-    background-color: #8B5CF6;
+/* ── Efecto al hacer clic ── */
+.btn-generate:active {
+    transform: scale(0.97);     /* Se achica un poco al hacer clic */
 }
 
-.color-box:nth-child(6) {
-    background-color: #06B6D4;
-}
+.site-footer {
+    padding: 1rem 2rem;
+    border-top: 1px solid white;
+    text-align: center;
+    color: white;
+    font-size: 0.9rem;
