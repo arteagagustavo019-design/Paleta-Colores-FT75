@@ -46,14 +46,15 @@ const renderPalette = (colors) => {
         box.classList.add("color-box");
         box.style.backgroundColor = color;
 
-           let colorCode;
-
         if (currentFormat === "hsl") {
-            colorCode = hexToHsl(color);
+            box.innerHTML = `
+                <span class="color-code">${color}</span>
+                <span class="color-code">${hexToHsl(color)}</span>
+            `;
         } else {
-            colorCode = color;
+            box.innerHTML = `<span class="color-code">${color}</span>`;
         }
-        box.innerHTML = `<span class="color-code">${colorCode}</span>`;
+
         palette.appendChild(box);
     });
 }
