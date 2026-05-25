@@ -4,13 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/style.css">
+    <script src="./index.js" defer></script>
     <title>Color Fly</title>
 
 </head>
 <body>
     
 <header class="site-header">
-    <div class="logo-container">
+    <div id="logo-container">
         <img src="img/pngtree-artist-at-work-painter-with-colorful-palette-png-image_18642447.webp" class="logo">
         <div class="logo-text">
         <h1 class="site-title">Colorfly Studio</h1>
@@ -23,8 +24,8 @@
     <section class="format-section--formato">
         <h2>Formato del Color</h2>
         <div class="format-buttons">
-            <button class="button-active">HEX</button>
-            <button class="button-inactive">HSL</button>
+            <button class="button-active format-btn" data-format="hex">HEX</button>
+            <button class="button-inactive format-btn" data-format="hsl">HSL</button>
         </div>
     </section>
         <section class="palette">
