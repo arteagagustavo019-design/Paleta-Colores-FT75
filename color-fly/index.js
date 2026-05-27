@@ -7,6 +7,10 @@ const formatBtns = document.querySelectorAll('.format-btn');
 
 const palette = document.querySelector('.palette');
 
+const toast = document.getElementById('toast');
+
+const toastMessage = document.getElementById('toast-message');
+
 // Variable para almacenar el formato de color seleccionado
 
 let currentFormat = "hex";
@@ -72,6 +76,7 @@ generateBtn.addEventListener("click", () => {
 
     const colors = generatePalette(count);
     currentColors = colors; // Guardar los colores generados en la variable global
+    showToast(`✅Paleta generada en formato ${currentFormat.toUpperCase()}`);
     renderPalette(currentColors);
 });
 
@@ -134,9 +139,16 @@ const hexToHsl = (hex) => {
     return `hsl(${Math.round(h * 360)}, ${Math.round(s * 100)}%, ${Math.round(l * 100)}%)`;
 }
 
+// Toast para mostrar mensajes temporales al usuario
 
+const showToast = (message) => {
+    toastMessage.textContent = message;
+    toast.classList.remove("hidden");
 
-
+    setTimeout(() => {
+        toast.classList.add("hidden");
+    }, 3000);
+}
 
 
 // Paleta inicial al cargar la página ← aquí va

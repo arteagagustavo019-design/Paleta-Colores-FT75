@@ -183,3 +183,25 @@ label {
     color: white;
     font-size: 0.9rem;
 }
+
+/* ── Estilos para el toast de notificación ── */
+
+.toast {
+    position: fixed;        /* Se queda fijo en la pantalla sin importar el scroll */
+    top: 1.5rem;            /* Separación desde arriba */
+    right: 1.5rem;          /* Separación desde la derecha */
+    background-color: rgba(255, 255, 255, 0.15);  /* gris claro transparente */
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    z-index: 999;           /* Se pone encima de todo */
+    opacity: 1;
+    transition: opacity 0.5s ease; /* Animación suave al desaparecer */
+}
+
+.toast.hidden {
+    opacity: 0;             /* Invisible pero sigue ocupando espacio */
+    pointer-events: none;   /* No interfiere con los clics cuando está oculto */
+}

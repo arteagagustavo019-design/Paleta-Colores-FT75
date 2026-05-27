@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/style.css">
-    <script src="./index.js" defer></script>
+    <link rel="stylesheet" href="./Color-fly/css/style.css">
+    <script src="./Color-fly/index.js" defer></script>
     <title>Color Fly</title>
 
 </head>
@@ -12,7 +12,7 @@
     
 <header class="site-header">
     <div id="logo-container">
-        <img src="img/pngtree-artist-at-work-painter-with-colorful-palette-png-image_18642447.webp" class="logo">
+        <image src="./Color-fly/img/pngtree-artist-at-work-painter-with-colorful-palette-png-image_18642447.webp" alt="Colorfly Logo" class="logo">
         <div class="logo-text">
         <h1 class="site-title">Colorfly Studio</h1>
             <span>Generador de Paletas de Color</span>
@@ -75,6 +75,10 @@
     </section>
         <button type="button" id="generate-btn" class="btn-generate">Generar Paleta</button>
 </main>
+
+<div id="toast" class="toast hidden">
+    <span id="toast-message">Paleta generada en formato HEX</span>
+</div>
 
 <footer class="site-footer">
     <p>&copy; 2026 Colorfly Studio. Todos los derechos reservados por Gustavo Arteaga.</p>
